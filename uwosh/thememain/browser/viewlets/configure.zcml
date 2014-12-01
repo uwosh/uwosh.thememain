@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="uwosh.thememain">
+
+	<browser:viewlet
+		name="uwosh.currentsectionnav"
+		manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+		layer="uwosh.thememain.browser.interfaces.IThemeSpecific"
+		class=".currentsectionnav.CurrentSectionNav"
+		permission="zope2.View" />
+
+</configure>

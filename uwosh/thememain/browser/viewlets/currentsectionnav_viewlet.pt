@@ -1,0 +1,36 @@
+
+<div id="currentSectionNav" tal:condition="view/shoulddisplay">
+	<tal:tabs tal:condition="view/portal_tabs"
+          i18n:domain="plone">
+    <a tal:attributes="href view/nav_context_url" href=""><h1 tal:content="view/nav_context/Title" /></a>
+
+    <ul>
+			<tal:tabs tal:repeat="tab python: view.portal_tabs['children']">
+			<tal:defs tal:define="selected python: context.absolute_url().startswith(tab['item'].getURL()) and 'selected' or 'plain';
+														isLast repeat/tab/end;
+														tabClass python: isLast and 'last ' + selected or selected;">
+														
+				<li tal:condition="not: tab/item/exclude_from_nav"
+					tal:attributes="id string:portaltab-${tab/item/id}; class tabClass">
+					
+					<a 	tal:condition="python: tab['item'].portal_type != 'Link'"
+               			tal:content="tab/item/Title"
+               			tal:attributes="href tab/item/getURL;
+                               			title tab/item/Description|nothing">
+            			Tab Name
+            		</a>
+
+					<a 	tal:condition="python: tab['item'].portal_type == 'Link'"
+						href="" 
+               			tal:content="tab/item/Title"
+               			tal:attributes="href tab/item/getRemoteUrl;
+                               			title tab/item/Description|nothing">
+            			Tab Name
+            		</a>
+
+				</li>
+			</tal:defs>	
+			</tal:tabs>
+    </ul>
+</tal:tabs>
+</div>

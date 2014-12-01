@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<object name="portal_skins" allow_any="False" cookie_persistence="False"
+   default_skin="Plone Default">
+
+   <object name="uwosh_thememain_custom_images"
+       meta_type="Filesystem Directory View"
+       directory="uwosh.thememain:skins/uwosh_thememain_custom_images"
+       remove="True"
+    />
+    <object name="uwosh_thememain_custom_templates"
+        meta_type="Filesystem Directory View"
+        directory="uwosh.thememain:skins/uwosh_thememain_custom_templates"
+        remove="True"
+    />
+    <object name="uwosh_thememain_styles"
+        meta_type="Filesystem Directory View"
+        directory="uwosh.thememain:skins/uwosh_thememain_styles"
+        remove="True"
+    />
+
+    <skin-path name="uwosh.thememain" based-on="Plone Default" remove="True">
+        <layer name="uwosh_thememain_custom_images"
+            insert-after="custom"
+            remove="Treu"
+        />
+        <layer name="uwosh_thememain_custom_templates"
+            insert-after="uwosh_thememain_custom_images"
+            remove="True"
+        />
+        <layer name="uwosh_thememain_styles"
+            insert-after="uwosh_thememain_custom_templates"
+            remove="True"
+        />
+ </skin-path>
+
+</object>

@@ -1,0 +1,29 @@
+Changelog
+=========
+
+0.5.1
+-----
+
+* added metadata files
+
+
+0.5
+---
+
+* removed pdb statement since that borks sites when it's called in production mode...
+
+
+0.4.10b2
+--------
+
+* updates how it handles dependency installations
+
+
+0.4.10b1
+--------
+
+* moved text size links stuff out of thememain and into themebase
+  [Kim Nyugen]
+
+
+

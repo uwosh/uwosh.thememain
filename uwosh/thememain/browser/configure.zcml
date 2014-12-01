@@ -1,0 +1,40 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="uwosh.thememain">
+
+    <!-- 'uwosh.thememain' Zope 3 browser layer -->
+    <interface
+        interface=".interfaces.IThemeSpecific"
+        type="zope.publisher.interfaces.browser.IBrowserSkinType"
+        name="uwosh.thememain"
+     />
+				
+		<browser:page
+			name="makeSectionNavigable"
+			for="Products.ATContentTypes.interface.IATFolder"
+			class=".actions.MakeSectionNavigable"
+			permission="cmf.ManagePortal"
+    />
+		<browser:page
+			name="makeSectionNavigable"
+			for="Products.ATContentTypes.interface.IATBTreeFolder"
+			class=".actions.MakeSectionNavigable"
+			permission="cmf.ManagePortal"
+    />
+		<browser:page
+			name="removeSectionNavigable"
+			for="Products.ATContentTypes.interface.IATFolder"
+			class=".actions.RemoveSectionNavigable"
+			permission="cmf.ManagePortal"
+    />
+		<browser:page
+			name="removeSectionNavigable"
+			for="Products.ATContentTypes.interface.IATBTreeFolder"
+			class=".actions.RemoveSectionNavigable"
+			permission="cmf.ManagePortal"
+    />
+
+		<include package=".viewlets" />
+		
+</configure>
